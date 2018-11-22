@@ -1,0 +1,3 @@
+[submodule "xproto"]
+	path = xproto
+	url = https://gitlab.freedesktop.org/xorg/proto/xproto
