@@ -3,3 +3,9 @@ name = "xproto"
 version = "0.1.0"
 authors = ["Dylan McKay <me@dylanmckay.io>"]
 
+description = "Rust bindings to the X11 protocol library"
+repository = "https://github.com/dylanmckay/xproto-rs"
+license = "MIT"
+documentation = "https://docs.rs/xproto"
+keywords = ["X11", "protocol", "xorg", "server", "forwarding"]
+
