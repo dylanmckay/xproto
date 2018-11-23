@@ -11,11 +11,12 @@
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 
-#[cfg_attr(feature = "protocol", macro_use)]
-#[cfg(feature = "protocol")]
+#[macro_use]
 extern crate protocol_derive;
+extern crate protocol;
 
 mod bindings;
+#[cfg(test)] mod tests;
 
 pub use self::bindings::*;
 
