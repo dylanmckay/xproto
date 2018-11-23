@@ -21,6 +21,17 @@ git checkout -q origin/master
 cd ../
 
 echo "generating bindings at $BINDINGS_DEST"
-bindgen --rustfmt-bindings "$BASE_DIR/xproto/Xproto.h" -o $BINDINGS_DEST
+
+# NOTE:
+# Requires rust-bindgen#1446 for `--disable-untagged-union`.
+# https://github.com/rust-lang/rust-bindgen/pull/1446
+bindgen "$BASE_DIR/xproto/Xproto.h" \
+        -o "$BINDINGS_DEST" \
+        --rustfmt-bindings \
+        --disable-untagged-union
+
+sed -i 's/derive(/derive(Protocol, /g' "$BINDINGS_DEST"
+
+sed -i 's/pub struct __BindgenUnionField/#[derive(Protocol)]\npub struct __BindgenUnionField/g' "$BINDINGS_DEST"
 
 
