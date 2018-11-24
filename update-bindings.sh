@@ -28,7 +28,10 @@ echo "generating bindings at $BINDINGS_DEST"
 bindgen "$BASE_DIR/xproto/Xproto.h" \
         -o "$BINDINGS_DEST" \
         --rustfmt-bindings \
-        --disable-untagged-union
+        --ignore-functions --ignore-methods \
+        --disable-untagged-union \
+        --impl-debug \
+        --with-derive-eq
 
 sed -i 's/derive(/derive(Protocol, /g' "$BINDINGS_DEST"
 

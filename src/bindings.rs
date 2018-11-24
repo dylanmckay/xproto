@@ -338,7 +338,7 @@ pub type BITS16 = CARD16;
 pub type BYTE = CARD8;
 pub type BOOL = CARD8;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xSegment {
     pub x1: INT16,
     pub y1: INT16,
@@ -400,7 +400,7 @@ fn bindgen_test_layout__xSegment() {
 }
 pub type xSegment = _xSegment;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xPoint {
     pub x: INT16,
     pub y: INT16,
@@ -440,7 +440,7 @@ fn bindgen_test_layout__xPoint() {
 }
 pub type xPoint = _xPoint;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xRectangle {
     pub x: INT16,
     pub y: INT16,
@@ -502,7 +502,7 @@ fn bindgen_test_layout__xRectangle() {
 }
 pub type xRectangle = _xRectangle;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xArc {
     pub x: INT16,
     pub y: INT16,
@@ -579,7 +579,7 @@ pub type KeyButMask = CARD16;
 ///Connection setup structures.  See Chapter 8: Connection Setup
 ///of the X Window System Protocol specification for details.
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xConnClientPrefix {
     pub byteOrder: CARD8,
     pub pad: BYTE,
@@ -677,7 +677,7 @@ fn bindgen_test_layout_xConnClientPrefix() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xConnSetupPrefix {
     pub success: CARD8,
     pub lengthReason: BYTE,
@@ -749,7 +749,7 @@ fn bindgen_test_layout_xConnSetupPrefix() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xConnSetup {
     pub release: CARD32,
     pub ridBase: CARD32,
@@ -931,7 +931,7 @@ fn bindgen_test_layout_xConnSetup() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xPixmapFormat {
     pub depth: CARD8,
     pub bitsPerPixel: CARD8,
@@ -1003,7 +1003,7 @@ fn bindgen_test_layout_xPixmapFormat() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xDepth {
     pub depth: CARD8,
     pub pad1: CARD8,
@@ -1064,7 +1064,7 @@ fn bindgen_test_layout_xDepth() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xVisualType {
     pub visualID: CARD32,
     pub class: CARD8,
@@ -1169,7 +1169,7 @@ fn bindgen_test_layout_xVisualType() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xWindowRoot {
     pub windowId: CARD32,
     pub defaultColormap: CARD32,
@@ -1364,7 +1364,7 @@ fn bindgen_test_layout_xWindowRoot() {
 /// Structure Defns
 ///   Structures needed for replies
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xTimecoord {
     pub time: CARD32,
     pub x: INT16,
@@ -1414,7 +1414,7 @@ fn bindgen_test_layout_xTimecoord() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xHostEntry {
     pub family: CARD8,
     pub pad: BYTE,
@@ -1464,7 +1464,7 @@ fn bindgen_test_layout_xHostEntry() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCharInfo {
     pub leftSideBearing: INT16,
     pub rightSideBearing: INT16,
@@ -1547,7 +1547,7 @@ fn bindgen_test_layout_xCharInfo() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xFontProp {
     pub name: CARD32,
     pub value: CARD32,
@@ -1586,7 +1586,7 @@ fn bindgen_test_layout_xFontProp() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xTextElt {
     pub len: CARD8,
     pub delta: INT8,
@@ -1625,7 +1625,7 @@ fn bindgen_test_layout_xTextElt() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xColorItem {
     pub pixel: CARD32,
     pub red: CARD16,
@@ -1708,7 +1708,7 @@ fn bindgen_test_layout_xColorItem() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xrgb {
     pub red: CARD16,
     pub green: CARD16,
@@ -1762,7 +1762,7 @@ pub type KEYCODE = CARD8;
 /// XRep:
 ///    meant to be 32 byte quantity
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGenericReply {
     pub type_: BYTE,
     pub data1: BYTE,
@@ -1889,7 +1889,7 @@ fn bindgen_test_layout_xGenericReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetWindowAttributesReply {
     pub type_: BYTE,
     pub backingStore: CARD8,
@@ -2150,7 +2150,7 @@ fn bindgen_test_layout_xGetWindowAttributesReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetGeometryReply {
     pub type_: BYTE,
     pub depth: CARD8,
@@ -2312,7 +2312,7 @@ fn bindgen_test_layout_xGetGeometryReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryTreeReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -2450,7 +2450,7 @@ fn bindgen_test_layout_xQueryTreeReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xInternAtomReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -2577,7 +2577,7 @@ fn bindgen_test_layout_xInternAtomReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetAtomNameReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -2717,7 +2717,7 @@ fn bindgen_test_layout_xGetAtomNameReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetPropertyReply {
     pub type_: BYTE,
     pub format: CARD8,
@@ -2846,7 +2846,7 @@ fn bindgen_test_layout_xGetPropertyReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListPropertiesReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -2988,7 +2988,7 @@ fn bindgen_test_layout_xListPropertiesReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetSelectionOwnerReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -3117,7 +3117,7 @@ fn bindgen_test_layout_xGetSelectionOwnerReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGrabPointerReply {
     pub type_: BYTE,
     pub status: BYTE,
@@ -3247,7 +3247,7 @@ fn bindgen_test_layout_xGrabPointerReply() {
 }
 pub type xGrabKeyboardReply = xGrabPointerReply;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryPointerReply {
     pub type_: BYTE,
     pub sameScreen: BOOL,
@@ -3409,7 +3409,7 @@ fn bindgen_test_layout_xQueryPointerReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetMotionEventsReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -3538,7 +3538,7 @@ fn bindgen_test_layout_xGetMotionEventsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xTranslateCoordsReply {
     pub type_: BYTE,
     pub sameScreen: BOOL,
@@ -3680,7 +3680,7 @@ fn bindgen_test_layout_xTranslateCoordsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetInputFocusReply {
     pub type_: BYTE,
     pub revertTo: CARD8,
@@ -3809,7 +3809,7 @@ fn bindgen_test_layout_xGetInputFocusReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryKeymapReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -3883,7 +3883,7 @@ fn bindgen_test_layout_xQueryKeymapReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xQueryFontReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -4110,7 +4110,7 @@ fn bindgen_test_layout__xQueryFontReply() {
 }
 pub type xQueryFontReply = _xQueryFontReply;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryTextExtentsReply {
     pub type_: BYTE,
     pub drawDirection: CARD8,
@@ -4277,7 +4277,7 @@ fn bindgen_test_layout_xQueryTextExtentsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListFontsReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -4415,7 +4415,7 @@ fn bindgen_test_layout_xListFontsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListFontsWithInfoReply {
     pub type_: BYTE,
     pub nameLength: CARD8,
@@ -4671,7 +4671,7 @@ fn bindgen_test_layout_xListFontsWithInfoReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetFontPathReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -4811,7 +4811,7 @@ fn bindgen_test_layout_xGetFontPathReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetImageReply {
     pub type_: BYTE,
     pub depth: CARD8,
@@ -4938,7 +4938,7 @@ fn bindgen_test_layout_xGetImageReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListInstalledColormapsReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -5099,7 +5099,7 @@ fn bindgen_test_layout_xListInstalledColormapsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocColorReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -5248,7 +5248,7 @@ fn bindgen_test_layout_xAllocColorReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocNamedColorReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -5416,7 +5416,7 @@ fn bindgen_test_layout_xAllocNamedColorReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocColorCellsReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -5556,7 +5556,7 @@ fn bindgen_test_layout_xAllocColorCellsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocColorPlanesReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -5698,7 +5698,7 @@ fn bindgen_test_layout_xAllocColorPlanesReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryColorsReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -5838,7 +5838,7 @@ fn bindgen_test_layout_xQueryColorsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xLookupColorReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -6000,7 +6000,7 @@ fn bindgen_test_layout_xLookupColorReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryBestSizeReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -6140,7 +6140,7 @@ fn bindgen_test_layout_xQueryBestSizeReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryExtensionReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -6308,7 +6308,7 @@ fn bindgen_test_layout_xQueryExtensionReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListExtensionsReply {
     pub type_: BYTE,
     pub nExtensions: CARD8,
@@ -6439,7 +6439,7 @@ fn bindgen_test_layout_xListExtensionsReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetMappingReply {
     pub type_: BYTE,
     pub success: CARD8,
@@ -6568,7 +6568,7 @@ fn bindgen_test_layout_xSetMappingReply() {
 pub type xSetPointerMappingReply = xSetMappingReply;
 pub type xSetModifierMappingReply = xSetMappingReply;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetPointerMappingReply {
     pub type_: BYTE,
     pub nElts: CARD8,
@@ -6697,7 +6697,7 @@ fn bindgen_test_layout_xGetPointerMappingReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetKeyboardMappingReply {
     pub type_: BYTE,
     pub keySymsPerKeyCode: CARD8,
@@ -6829,7 +6829,7 @@ fn bindgen_test_layout_xGetKeyboardMappingReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetModifierMappingReply {
     pub type_: BYTE,
     pub numKeyPerModifier: CARD8,
@@ -6961,7 +6961,7 @@ fn bindgen_test_layout_xGetModifierMappingReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetKeyboardControlReply {
     pub type_: BYTE,
     pub globalAutoRepeat: BOOL,
@@ -7115,7 +7115,7 @@ fn bindgen_test_layout_xGetKeyboardControlReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetPointerControlReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -7273,7 +7273,7 @@ fn bindgen_test_layout_xGetPointerControlReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetScreenSaverReply {
     pub type_: BYTE,
     pub pad1: BYTE,
@@ -7439,7 +7439,7 @@ fn bindgen_test_layout_xGetScreenSaverReply() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListHostsReply {
     pub type_: BYTE,
     pub enabled: BOOL,
@@ -7579,7 +7579,7 @@ fn bindgen_test_layout_xListHostsReply() {
 /// Xerror
 ///    All errors  are 32 bytes
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xError {
     pub type_: BYTE,
     pub errorCode: BYTE,
@@ -7730,12 +7730,12 @@ fn bindgen_test_layout_xError() {
 /// xEvent
 ///    All events are 32 bytes
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent {
     pub u: _xEvent__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1 {
     pub u: __BindgenUnionField<_xEvent__bindgen_ty_1__bindgen_ty_1>,
     pub keyButtonPointer: __BindgenUnionField<_xEvent__bindgen_ty_1__bindgen_ty_2>,
@@ -7766,7 +7766,7 @@ pub struct _xEvent__bindgen_ty_1 {
     pub bindgen_union_field: [u32; 8usize],
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_1 {
     pub type_: BYTE,
     pub detail: BYTE,
@@ -7828,7 +7828,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_1() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_2 {
     pub pad00: CARD32,
     pub time: CARD32,
@@ -8016,7 +8016,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_2() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_3 {
     pub pad00: CARD32,
     pub time: CARD32,
@@ -8204,7 +8204,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_3() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_4 {
     pub pad00: CARD32,
     pub window: CARD32,
@@ -8308,7 +8308,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_4() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_5 {
     pub pad00: CARD32,
     pub window: CARD32,
@@ -8438,7 +8438,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_5() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_6 {
     pub pad00: CARD32,
     pub drawable: CARD32,
@@ -8624,7 +8624,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_6() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_7 {
     pub pad00: CARD32,
     pub drawable: CARD32,
@@ -8714,7 +8714,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_7() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_8 {
     pub pad00: CARD32,
     pub window: CARD32,
@@ -8818,7 +8818,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_8() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_9 {
     pub pad00: CARD32,
     pub parent: CARD32,
@@ -8976,7 +8976,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_9() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_10 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -9041,7 +9041,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_10() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_11 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -9162,7 +9162,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_11() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_12 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -9283,7 +9283,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_12() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_13 {
     pub pad00: CARD32,
     pub parent: CARD32,
@@ -9348,7 +9348,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_13() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_14 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -9509,7 +9509,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_14() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_15 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -9684,7 +9684,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_15() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_16 {
     pub pad00: CARD32,
     pub parent: CARD32,
@@ -9859,7 +9859,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_16() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_17 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -10006,7 +10006,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_17() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_18 {
     pub pad00: CARD32,
     pub window: CARD32,
@@ -10085,7 +10085,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_18() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_19 {
     pub pad00: CARD32,
     pub event: CARD32,
@@ -10220,7 +10220,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_19() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_20 {
     pub pad00: CARD32,
     pub window: CARD32,
@@ -10341,7 +10341,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_20() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_21 {
     pub pad00: CARD32,
     pub time: CARD32,
@@ -10420,7 +10420,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_21() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_22 {
     pub pad00: CARD32,
     pub time: CARD32,
@@ -10541,7 +10541,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_22() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_23 {
     pub pad00: CARD32,
     pub time: CARD32,
@@ -10648,7 +10648,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_23() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_24 {
     pub pad00: CARD32,
     pub window: CARD32,
@@ -10769,7 +10769,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_24() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_25 {
     pub pad00: CARD32,
     pub request: CARD8,
@@ -10862,14 +10862,14 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_25() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_26 {
     pub pad00: CARD32,
     pub window: CARD32,
     pub u: _xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1 {
     pub l: __BindgenUnionField<_xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindgen_ty_1>,
     pub s: __BindgenUnionField<_xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindgen_ty_2>,
@@ -10877,7 +10877,7 @@ pub struct _xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1 {
     pub bindgen_union_field: [u32; 6usize],
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindgen_ty_1 {
     pub type_: CARD32,
     pub longs0: INT32,
@@ -10978,7 +10978,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindg
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindgen_ty_2 {
     pub type_: CARD32,
     pub shorts0: INT16,
@@ -11144,7 +11144,7 @@ fn bindgen_test_layout__xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindg
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent__bindgen_ty_1__bindgen_ty_26__bindgen_ty_1__bindgen_ty_3 {
     pub type_: CARD32,
     pub bytes: [INT8; 20usize],
@@ -11651,7 +11651,7 @@ pub type xEvent = _xEvent;
 ///
 ///
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGenericEvent {
     pub type_: BYTE,
     pub extension: CARD8,
@@ -11789,7 +11789,7 @@ fn bindgen_test_layout_xGenericEvent() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xKeymapEvent {
     pub type_: BYTE,
     pub map: [BYTE; 31usize],
@@ -11828,7 +11828,7 @@ fn bindgen_test_layout_xKeymapEvent() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xReply {
     pub generic: __BindgenUnionField<xGenericReply>,
     pub geom: __BindgenUnionField<xGetGeometryReply>,
@@ -12265,7 +12265,7 @@ fn bindgen_test_layout_xReply() {
 }
 /// REQUESTS
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xReq {
     pub reqType: CARD8,
     pub data: CARD8,
@@ -12317,7 +12317,7 @@ fn bindgen_test_layout__xReq() {
 pub type xReq = _xReq;
 ///  structures that follow request.
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xResourceReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -12378,7 +12378,7 @@ fn bindgen_test_layout_xResourceReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCreateWindowReq {
     pub reqType: CARD8,
     pub depth: CARD8,
@@ -12538,7 +12538,7 @@ fn bindgen_test_layout_xCreateWindowReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeWindowAttributesReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -12618,7 +12618,7 @@ fn bindgen_test_layout_xChangeWindowAttributesReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeSaveSetReq {
     pub reqType: CARD8,
     pub mode: BYTE,
@@ -12679,7 +12679,7 @@ fn bindgen_test_layout_xChangeSaveSetReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xReparentWindowReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -12773,7 +12773,7 @@ fn bindgen_test_layout_xReparentWindowReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xConfigureWindowReq {
     pub reqType: CARD8,
     pub pad: CARD8,
@@ -12856,7 +12856,7 @@ fn bindgen_test_layout_xConfigureWindowReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCirculateWindowReq {
     pub reqType: CARD8,
     pub direction: CARD8,
@@ -12917,7 +12917,7 @@ fn bindgen_test_layout_xCirculateWindowReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xInternAtomReq {
     pub reqType: CARD8,
     pub onlyIfExists: BOOL,
@@ -12989,7 +12989,7 @@ fn bindgen_test_layout_xInternAtomReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangePropertyReq {
     pub reqType: CARD8,
     pub mode: CARD8,
@@ -13105,7 +13105,7 @@ fn bindgen_test_layout_xChangePropertyReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xDeletePropertyReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -13177,7 +13177,7 @@ fn bindgen_test_layout_xDeletePropertyReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetPropertyReq {
     pub reqType: CARD8,
     pub delete: BOOL,
@@ -13282,7 +13282,7 @@ fn bindgen_test_layout_xGetPropertyReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetSelectionOwnerReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -13365,7 +13365,7 @@ fn bindgen_test_layout_xSetSelectionOwnerReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xConvertSelectionReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -13470,7 +13470,7 @@ fn bindgen_test_layout_xConvertSelectionReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSendEventReq {
     pub reqType: CARD8,
     pub propagate: BOOL,
@@ -13553,7 +13553,7 @@ fn bindgen_test_layout_xSendEventReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGrabPointerReq {
     pub reqType: CARD8,
     pub ownerEvents: BOOL,
@@ -13680,7 +13680,7 @@ fn bindgen_test_layout_xGrabPointerReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGrabButtonReq {
     pub reqType: CARD8,
     pub ownerEvents: BOOL,
@@ -13829,7 +13829,7 @@ fn bindgen_test_layout_xGrabButtonReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xUngrabButtonReq {
     pub reqType: CARD8,
     pub button: CARD8,
@@ -13912,7 +13912,7 @@ fn bindgen_test_layout_xUngrabButtonReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeActivePointerGrabReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -14018,7 +14018,7 @@ fn bindgen_test_layout_xChangeActivePointerGrabReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGrabKeyboardReq {
     pub reqType: CARD8,
     pub ownerEvents: BOOL,
@@ -14123,7 +14123,7 @@ fn bindgen_test_layout_xGrabKeyboardReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGrabKeyReq {
     pub reqType: CARD8,
     pub ownerEvents: BOOL,
@@ -14261,7 +14261,7 @@ fn bindgen_test_layout_xGrabKeyReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xUngrabKeyReq {
     pub reqType: CARD8,
     pub key: CARD8,
@@ -14344,7 +14344,7 @@ fn bindgen_test_layout_xUngrabKeyReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllowEventsReq {
     pub reqType: CARD8,
     pub mode: CARD8,
@@ -14405,7 +14405,7 @@ fn bindgen_test_layout_xAllowEventsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetMotionEventsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -14488,7 +14488,7 @@ fn bindgen_test_layout_xGetMotionEventsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xTranslateCoordsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -14582,7 +14582,7 @@ fn bindgen_test_layout_xTranslateCoordsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xWarpPointerReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -14720,7 +14720,7 @@ fn bindgen_test_layout_xWarpPointerReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetInputFocusReq {
     pub reqType: CARD8,
     pub revertTo: CARD8,
@@ -14792,7 +14792,7 @@ fn bindgen_test_layout_xSetInputFocusReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xOpenFontReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -14886,7 +14886,7 @@ fn bindgen_test_layout_xOpenFontReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryTextExtentsReq {
     pub reqType: CARD8,
     pub oddLength: BOOL,
@@ -14947,7 +14947,7 @@ fn bindgen_test_layout_xQueryTextExtentsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListFontsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15020,7 +15020,7 @@ fn bindgen_test_layout_xListFontsReq() {
 }
 pub type xListFontsWithInfoReq = xListFontsReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetFontPathReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15103,7 +15103,7 @@ fn bindgen_test_layout_xSetFontPathReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCreatePixmapReq {
     pub reqType: CARD8,
     pub depth: CARD8,
@@ -15197,7 +15197,7 @@ fn bindgen_test_layout_xCreatePixmapReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCreateGCReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15280,7 +15280,7 @@ fn bindgen_test_layout_xCreateGCReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeGCReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15352,7 +15352,7 @@ fn bindgen_test_layout_xChangeGCReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCopyGCReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15435,7 +15435,7 @@ fn bindgen_test_layout_xCopyGCReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetDashesReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15518,7 +15518,7 @@ fn bindgen_test_layout_xSetDashesReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetClipRectanglesReq {
     pub reqType: CARD8,
     pub ordering: BYTE,
@@ -15601,7 +15601,7 @@ fn bindgen_test_layout_xSetClipRectanglesReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xClearAreaReq {
     pub reqType: CARD8,
     pub exposures: BOOL,
@@ -15706,7 +15706,7 @@ fn bindgen_test_layout_xClearAreaReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCopyAreaReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -15855,7 +15855,7 @@ fn bindgen_test_layout_xCopyAreaReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCopyPlaneReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -16015,7 +16015,7 @@ fn bindgen_test_layout_xCopyPlaneReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xPolyPointReq {
     pub reqType: CARD8,
     pub coordMode: BYTE,
@@ -16088,7 +16088,7 @@ fn bindgen_test_layout_xPolyPointReq() {
 }
 pub type xPolyLineReq = xPolyPointReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xPolySegmentReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -16164,7 +16164,7 @@ pub type xPolyRectangleReq = xPolySegmentReq;
 pub type xPolyFillRectangleReq = xPolySegmentReq;
 pub type xPolyFillArcReq = xPolySegmentReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _FillPolyReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -16270,7 +16270,7 @@ fn bindgen_test_layout__FillPolyReq() {
 }
 pub type xFillPolyReq = _FillPolyReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _PutImageReq {
     pub reqType: CARD8,
     pub format: CARD8,
@@ -16420,7 +16420,7 @@ fn bindgen_test_layout__PutImageReq() {
 }
 pub type xPutImageReq = _PutImageReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetImageReq {
     pub reqType: CARD8,
     pub format: CARD8,
@@ -16536,7 +16536,7 @@ fn bindgen_test_layout_xGetImageReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xPolyTextReq {
     pub reqType: CARD8,
     pub pad: CARD8,
@@ -16632,7 +16632,7 @@ fn bindgen_test_layout_xPolyTextReq() {
 pub type xPolyText8Req = xPolyTextReq;
 pub type xPolyText16Req = xPolyTextReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xImageTextReq {
     pub reqType: CARD8,
     pub nChars: BYTE,
@@ -16728,7 +16728,7 @@ fn bindgen_test_layout_xImageTextReq() {
 pub type xImageText8Req = xImageTextReq;
 pub type xImageText16Req = xImageTextReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCreateColormapReq {
     pub reqType: CARD8,
     pub alloc: BYTE,
@@ -16811,7 +16811,7 @@ fn bindgen_test_layout_xCreateColormapReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCopyColormapAndFreeReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -16883,7 +16883,7 @@ fn bindgen_test_layout_xCopyColormapAndFreeReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocColorReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -16988,7 +16988,7 @@ fn bindgen_test_layout_xAllocColorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocNamedColorReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -17082,7 +17082,7 @@ fn bindgen_test_layout_xAllocNamedColorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocColorCellsReq {
     pub reqType: CARD8,
     pub contiguous: BOOL,
@@ -17165,7 +17165,7 @@ fn bindgen_test_layout_xAllocColorCellsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xAllocColorPlanesReq {
     pub reqType: CARD8,
     pub contiguous: BOOL,
@@ -17270,7 +17270,7 @@ fn bindgen_test_layout_xAllocColorPlanesReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xFreeColorsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -17342,7 +17342,7 @@ fn bindgen_test_layout_xFreeColorsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xStoreColorsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -17403,7 +17403,7 @@ fn bindgen_test_layout_xStoreColorsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xStoreNamedColorReq {
     pub reqType: CARD8,
     pub flags: CARD8,
@@ -17508,7 +17508,7 @@ fn bindgen_test_layout_xStoreNamedColorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryColorsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -17569,7 +17569,7 @@ fn bindgen_test_layout_xQueryColorsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xLookupColorReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -17663,7 +17663,7 @@ fn bindgen_test_layout_xLookupColorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCreateCursorReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -17834,7 +17834,7 @@ fn bindgen_test_layout_xCreateCursorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xCreateGlyphCursorReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18007,7 +18007,7 @@ fn bindgen_test_layout_xCreateGlyphCursorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xRecolorCursorReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18134,7 +18134,7 @@ fn bindgen_test_layout_xRecolorCursorReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryBestSizeReq {
     pub reqType: CARD8,
     pub class: CARD8,
@@ -18217,7 +18217,7 @@ fn bindgen_test_layout_xQueryBestSizeReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xQueryExtensionReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18300,7 +18300,7 @@ fn bindgen_test_layout_xQueryExtensionReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetModifierMappingReq {
     pub reqType: CARD8,
     pub numKeyPerModifier: CARD8,
@@ -18353,7 +18353,7 @@ fn bindgen_test_layout_xSetModifierMappingReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetPointerMappingReq {
     pub reqType: CARD8,
     pub nElts: CARD8,
@@ -18403,7 +18403,7 @@ fn bindgen_test_layout_xSetPointerMappingReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGetKeyboardMappingReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18488,7 +18488,7 @@ fn bindgen_test_layout_xGetKeyboardMappingReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeKeyboardMappingReq {
     pub reqType: CARD8,
     pub keyCodes: CARD8,
@@ -18582,7 +18582,7 @@ fn bindgen_test_layout_xChangeKeyboardMappingReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeKeyboardControlReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18647,7 +18647,7 @@ fn bindgen_test_layout_xChangeKeyboardControlReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xBellReq {
     pub reqType: CARD8,
     pub percent: INT8,
@@ -18697,7 +18697,7 @@ fn bindgen_test_layout_xBellReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangePointerControlReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18814,7 +18814,7 @@ fn bindgen_test_layout_xChangePointerControlReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xSetScreenSaverReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -18919,7 +18919,7 @@ fn bindgen_test_layout_xSetScreenSaverReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeHostsReq {
     pub reqType: CARD8,
     pub mode: BYTE,
@@ -19002,7 +19002,7 @@ fn bindgen_test_layout_xChangeHostsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xListHostsReq {
     pub reqType: CARD8,
     pub pad: BYTE,
@@ -19052,7 +19052,7 @@ fn bindgen_test_layout_xListHostsReq() {
     );
 }
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xChangeModeReq {
     pub reqType: CARD8,
     pub mode: BYTE,
@@ -19105,7 +19105,7 @@ pub type xSetAccessControlReq = xChangeModeReq;
 pub type xSetCloseDownModeReq = xChangeModeReq;
 pub type xForceScreenSaverReq = xChangeModeReq;
 #[repr(C)]
-#[derive(Protocol, Debug, Copy, Clone)]
+#[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xRotatePropertiesReq {
     pub reqType: CARD8,
     pub pad: BYTE,
