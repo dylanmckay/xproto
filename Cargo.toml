@@ -15,6 +15,6 @@ default = ["protocol-support"]
 protocol-support = ["protocol", "protocol-derive"]
 
 [dependencies]
-protocol = { version = "0.5", optional = true }
-protocol-derive = { version = "0.5", optional = true }
+protocol = { version = "0.7", optional = true }
+protocol-derive = { version = "0.7", optional = true }
 
