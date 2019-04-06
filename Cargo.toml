@@ -1,6 +1,6 @@
 [package]
 name = "xproto"
-version = "1.1.4"
+version = "1.1.5"
 authors = ["Dylan McKay <me@dylanmckay.io>"]
 
 description = "Rust bindings to the X11 protocol library"
