@@ -576,8 +576,8 @@ fn bindgen_test_layout__xArc() {
 }
 pub type xArc = _xArc;
 pub type KeyButMask = CARD16;
-///Connection setup structures.  See Chapter 8: Connection Setup
-///of the X Window System Protocol specification for details.
+#[doc = "Connection setup structures.  See Chapter 8: Connection Setup"]
+#[doc = "of the X Window System Protocol specification for details."]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xConnClientPrefix {
@@ -1361,8 +1361,8 @@ fn bindgen_test_layout_xWindowRoot() {
         )
     );
 }
-/// Structure Defns
-///   Structures needed for replies
+#[doc = " Structure Defns"]
+#[doc = "   Structures needed for replies"]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xTimecoord {
@@ -1759,8 +1759,8 @@ fn bindgen_test_layout_xrgb() {
     );
 }
 pub type KEYCODE = CARD8;
-/// XRep:
-///    meant to be 32 byte quantity
+#[doc = " XRep:"]
+#[doc = "    meant to be 32 byte quantity"]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGenericReply {
@@ -7576,8 +7576,8 @@ fn bindgen_test_layout_xListHostsReply() {
         )
     );
 }
-/// Xerror
-///    All errors  are 32 bytes
+#[doc = " Xerror"]
+#[doc = "    All errors  are 32 bytes"]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xError {
@@ -7727,8 +7727,8 @@ fn bindgen_test_layout_xError() {
         )
     );
 }
-/// xEvent
-///    All events are 32 bytes
+#[doc = " xEvent"]
+#[doc = "    All events are 32 bytes"]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xEvent {
@@ -11638,18 +11638,18 @@ fn bindgen_test_layout__xEvent() {
     );
 }
 pub type xEvent = _xEvent;
-/// Generic event
-///
-/// Those events are not part of the core protocol spec and can be used by
-/// various extensions.
-/// type is always GenericEvent
-/// extension is the minor opcode of the extension the event belongs to.
-/// evtype is the actual event type, unique __per extension__.
-///
-/// GenericEvents can be longer than 32 bytes, with the length field
-/// specifying the number of 4 byte blocks after the first 32 bytes.
-///
-///
+#[doc = " Generic event"]
+#[doc = ""]
+#[doc = " Those events are not part of the core protocol spec and can be used by"]
+#[doc = " various extensions."]
+#[doc = " type is always GenericEvent"]
+#[doc = " extension is the minor opcode of the extension the event belongs to."]
+#[doc = " evtype is the actual event type, unique __per extension__."]
+#[doc = ""]
+#[doc = " GenericEvents can be longer than 32 bytes, with the length field"]
+#[doc = " specifying the number of 4 byte blocks after the first 32 bytes."]
+#[doc = ""]
+#[doc = ""]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xGenericEvent {
@@ -12263,7 +12263,7 @@ fn bindgen_test_layout_xReply() {
         )
     );
 }
-/// REQUESTS
+#[doc = " REQUESTS"]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct _xReq {
@@ -12315,7 +12315,7 @@ fn bindgen_test_layout__xReq() {
     );
 }
 pub type xReq = _xReq;
-///  structures that follow request.
+#[doc = "  structures that follow request."]
 #[repr(C)]
 #[derive(Protocol, Debug, Copy, Clone, PartialEq, Eq)]
 pub struct xResourceReq {
