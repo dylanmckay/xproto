@@ -22,9 +22,6 @@ cd ../
 
 echo "generating bindings at $BINDINGS_DEST"
 
-# NOTE:
-# Requires rust-bindgen#1446 for `--disable-untagged-union`.
-# https://github.com/rust-lang/rust-bindgen/pull/1446
 bindgen "$BASE_DIR/xproto/Xproto.h" \
         -o "$BINDINGS_DEST" \
         --rustfmt-bindings \
