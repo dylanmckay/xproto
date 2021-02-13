@@ -1,4 +1,4 @@
-use bindings::*;
+use crate::bindings::*;
 
 use protocol::{self, Parcel};
 
